@@ -105,8 +105,6 @@ def mode(list):
     list.sort()
     countEachNumberlist=findCountEachNumberList(list)
     ans=[]
-    for key, value in  countEachNumberlist.items():
-        if(len(ans))
 
 def findCountEachNumberList(list):
     startIndex = 0
@@ -133,11 +131,38 @@ def findCountEachNumberList(list):
                 compareIndex+=1
                 count=0
     return numberWithCount
-    
-num=[1,2,3]
-num_1=[5,5,5,25]
-print(mode(num))
-print(mode(num_1))
-            
 
+def zip_with(doOperation, input_1, input_2):
+    numLength_input1= len(input_1)
+    numLength_input2=len(input_2)
+    if numLength_input1 == 0 :
+        return input_1
+    if numLength_input2 == 0 :
+        return input_2
+    inputSmallestLength=findInputSmallestLength(numLength_input1, numLength_input2)
+    ans=[]
+    index=0
+    while(index < inputSmallestLength):
+        resultOperation= doOperation(input_1[index], input_2[index])
+        ans.append(ans)
+        index+=1
+    while(index < len(input_1)):
+        ans.append(input_1[index])
+        index+=1
+    while(index < len(input_2)):
+        ans.append(input_2[index])
+        index+=1
+    return ans
 
+def findInputSmallestLength(input1, input2):
+    if input1 > input2:
+        return input2
+    elif input2 > input1:
+        return input1
+    else:
+        return input1
+def add (x, y):
+    return x+y
+num=[1, 2, 3]
+num1=[1, 2, 4, 5]
+print(zip_with(add, num, num1))
