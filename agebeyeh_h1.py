@@ -86,7 +86,6 @@ def removeDuplicate(list):
                 listRemovedDuplicates.append(list[startIndex])
                 startIndex=compareIndex
                 compareIndex+=1
-        print(f'startIndex: {startIndex} \n comparrIndex: {compareIndex} \n endIndex:{endIndex} \n listRemovedDuplicates: {listRemovedDuplicates}')
     return listRemovedDuplicates 
 
 def median(list):
@@ -144,13 +143,7 @@ def zip_with(doOperation, input_1, input_2):
     index=0
     while(index < inputSmallestLength):
         resultOperation= doOperation(input_1[index], input_2[index])
-        ans.append(ans)
-        index+=1
-    while(index < len(input_1)):
-        ans.append(input_1[index])
-        index+=1
-    while(index < len(input_2)):
-        ans.append(input_2[index])
+        ans.append(resultOperation)
         index+=1
     return ans
 
@@ -161,8 +154,3 @@ def findInputSmallestLength(input1, input2):
         return input1
     else:
         return input1
-def add (x, y):
-    return x+y
-num=[1, 2, 3]
-num1=[1, 2, 4, 5]
-print(zip_with(add, num, num1))
