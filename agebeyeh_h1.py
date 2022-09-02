@@ -103,7 +103,21 @@ def median(list):
 def mode(list):
     list.sort()
     countEachNumberlist=findCountEachNumberList(list)
+    maximumNumberCount= findMaximumCountList(countEachNumberlist)
     ans=[]
+    for key in countEachNumberlist:
+        if countEachNumberlist[key] == maximumNumberCount:
+            ans.append(key)
+    return ans
+
+def findMaximumCountList(listMap):
+    maximum=-1
+    for value in listMap.values():
+        if maximum==-1:
+            maximum= value
+        if value > maximum:
+            maximum = value
+    return maximum
 
 def findCountEachNumberList(list):
     startIndex = 0
@@ -117,7 +131,6 @@ def findCountEachNumberList(list):
             numberWithCount[number]=count
             count=0
             break
-            
         else:
             if list[startIndex] == list[compareIndex]:
                 count+=1
@@ -154,3 +167,20 @@ def findInputSmallestLength(input1, input2):
         return input1
     else:
         return input1
+
+grid= [  [1,2,3, 4,5,6, 7,8,9],
+		 [4,5,6, 7,8,9, 1,2,3],
+		 [7,8,9, 1,2,3, 4,5,6],
+
+		 [2,3,4, 5,6,7, 8,9,1],
+		 [5,6,7, 8,9,1, 2,3,4],
+		 [8,9,1, 2,3,4, 5,6,7],
+
+		 [3,4,5, 6,7,8, 9,1,2],
+		 [6,7,8, 9,1,2, 3,4,5],
+		 [9,1,2, 3,4,5, 6,7,8],
+		]
+num=[1, 2, 3, 4, 5, 6, 7, 8, 9]
+count=0
+for x in grid:
+    
